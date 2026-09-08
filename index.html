@@ -1,12 +1,17 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday, Sunmisola</title>
+
+<title>Happy 21st Birthday, Sunmisola</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Jost:wght@300;400;500;600&family=Parisienne&display=swap" rel="stylesheet">
+
 <style>
   :root{
     --cream:#FBF3EC;
@@ -20,15 +25,21 @@
     --plum-soft:#6E4B5A;
     --gold:#C9A66B;
     --gold-soft:#E4D2AE;
-    --shadow: 0 20px 60px rgba(74,43,58,0.12);
+    --shadow:0 20px 60px rgba(74,43,58,0.12);
   }
 
-  *{margin:0;padding:0;box-sizing:border-box;}
+  *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+  }
 
-  html{scroll-behavior:smooth;}
+  html{
+    scroll-behavior:smooth;
+  }
 
   body{
-    font-family:'Jost', sans-serif;
+    font-family:'Jost',sans-serif;
     background:var(--cream);
     color:var(--plum);
     overflow-x:hidden;
@@ -37,21 +48,28 @@
   }
 
   h1,h2,h3{
-    font-family:'Fraunces', serif;
+    font-family:'Fraunces',serif;
     font-weight:500;
     color:var(--plum);
   }
 
   .script{
-    font-family:'Parisienne', cursive;
+    font-family:'Parisienne',cursive;
     font-weight:400;
   }
 
-  @media (prefers-reduced-motion: reduce){
-    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+  @media (prefers-reduced-motion:reduce){
+    *{
+      animation-duration:0.01ms!important;
+      animation-iteration-count:1!important;
+      transition-duration:0.01ms!important;
+      scroll-behavior:auto!important;
+    }
   }
 
-  a{color:inherit;}
+  a{
+    color:inherit;
+  }
 
   section{
     position:relative;
@@ -60,7 +78,6 @@
     margin:0 auto;
   }
 
-  /* ---------- Background sprig / botanical motif (signature element) ---------- */
   .sprig{
     position:absolute;
     opacity:0.55;
@@ -68,7 +85,6 @@
     z-index:0;
   }
 
-  /* ---------- Floating ambience ---------- */
   .floaters{
     position:fixed;
     inset:0;
@@ -76,20 +92,36 @@
     z-index:1;
     overflow:hidden;
   }
+
   .floater{
     position:absolute;
     opacity:0;
     animation:drift linear infinite;
-    will-change:transform, opacity;
-  }
-  @keyframes drift{
-    0%{ transform:translateY(0) rotate(0deg); opacity:0; }
-    8%{ opacity:0.7; }
-    92%{ opacity:0.5; }
-    100%{ transform:translateY(-115vh) rotate(25deg); opacity:0; }
+    will-change:transform,opacity;
   }
 
-  /* ---------- Music toggle ---------- */
+  @keyframes drift{
+    0%{
+      transform:translateY(0) rotate(0deg);
+      opacity:0;
+    }
+
+    8%{
+      opacity:0.7;
+    }
+
+    92%{
+      opacity:0.5;
+    }
+
+    100%{
+      transform:translateY(-115vh) rotate(25deg);
+      opacity:0;
+    }
+  }
+
+  /* ---------- MUSIC ---------- */
+
   .music-toggle{
     position:fixed;
     top:20px;
@@ -107,14 +139,19 @@
     cursor:pointer;
     transition:transform 0.3s ease;
   }
-  .music-toggle:hover{ transform:scale(1.08); }
-  .music-toggle svg{ width:22px; height:22px; fill:var(--rose-deep); }
-  .music-toggle.playing svg .bar{ animation:eq 0.9s ease-in-out infinite; transform-origin:bottom; }
-  .music-toggle.playing svg .bar:nth-child(2){ animation-delay:0.2s; }
-  .music-toggle.playing svg .bar:nth-child(3){ animation-delay:0.4s; }
-  @keyframes eq{ 0%,100%{ transform:scaleY(0.4);} 50%{ transform:scaleY(1);} }
+
+  .music-toggle:hover{
+    transform:scale(1.08);
+  }
+
+  .music-toggle svg{
+    width:22px;
+    height:22px;
+    fill:var(--rose-deep);
+  }
 
   /* ---------- HERO ---------- */
+
   .hero{
     min-height:100vh;
     display:flex;
@@ -124,9 +161,9 @@
     text-align:center;
     padding:40px 24px;
     background:
-      radial-gradient(ellipse at 20% 15%, rgba(230,220,240,0.9), transparent 55%),
-      radial-gradient(ellipse at 85% 80%, rgba(241,211,218,0.85), transparent 55%),
-      linear-gradient(180deg, var(--cream) 0%, var(--paper) 100%);
+      radial-gradient(ellipse at 20% 15%,rgba(230,220,240,0.9),transparent 55%),
+      radial-gradient(ellipse at 85% 80%,rgba(241,211,218,0.85),transparent 55%),
+      linear-gradient(180deg,var(--cream) 0%,var(--paper) 100%);
     position:relative;
     overflow:hidden;
   }
@@ -136,20 +173,28 @@
     width:520px;
     height:520px;
     border-radius:50%;
-    background:radial-gradient(circle, rgba(233,203,214,0.55) 0%, rgba(233,203,214,0) 70%);
+    background:radial-gradient(circle,rgba(233,203,214,0.55) 0%,rgba(233,203,214,0) 70%);
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);
     animation:pulse-glow 6s ease-in-out infinite;
     z-index:0;
   }
+
   @keyframes pulse-glow{
-    0%,100%{ opacity:0.6; transform:translate(-50%,-50%) scale(1); }
-    50%{ opacity:1; transform:translate(-50%,-50%) scale(1.12); }
+    0%,100%{
+      opacity:0.6;
+      transform:translate(-50%,-50%) scale(1);
+    }
+
+    50%{
+      opacity:1;
+      transform:translate(-50%,-50%) scale(1.12);
+    }
   }
 
   .eyebrow{
-    font-family:'Jost', sans-serif;
+    font-family:'Jost',sans-serif;
     letter-spacing:0.35em;
     text-transform:uppercase;
     font-size:0.72rem;
@@ -161,14 +206,15 @@
   }
 
   .hero h1{
-    font-size:clamp(2.6rem, 7vw, 5.2rem);
+    font-size:clamp(2.6rem,7vw,5.2rem);
     line-height:1.05;
     z-index:2;
     opacity:0;
     animation:fade-up 1.1s ease forwards 0.4s;
   }
+
   .hero h1 .name{
-    font-family:'Parisienne', cursive;
+    font-family:'Parisienne',cursive;
     font-size:1.35em;
     color:var(--rose-deep);
     display:block;
@@ -177,42 +223,54 @@
 
   .hero .subtitle{
     margin-top:26px;
-    font-size:clamp(1rem, 2vw, 1.25rem);
+    font-size:clamp(1rem,2vw,1.25rem);
     color:var(--plum-soft);
-    max-width:520px;
+    max-width:560px;
     z-index:2;
     opacity:0;
     animation:fade-up 1.1s ease forwards 0.7s;
   }
 
+  .age-badge{
+    margin-top:24px;
+    padding:8px 20px;
+    border:1px solid var(--gold-soft);
+    border-radius:100px;
+    background:rgba(255,251,247,0.7);
+    color:var(--rose-deep);
+    font-size:0.78rem;
+    letter-spacing:0.15em;
+    text-transform:uppercase;
+    z-index:2;
+    opacity:0;
+    animation:fade-up 1.1s ease forwards 0.85s;
+  }
+
   .cta{
-    margin-top:48px;
+    margin-top:40px;
     z-index:2;
     opacity:0;
     animation:fade-up 1.1s ease forwards 1s;
   }
 
   .btn{
-    font-family:'Jost', sans-serif;
+    font-family:'Jost',sans-serif;
     font-size:1rem;
     letter-spacing:0.04em;
-    background:linear-gradient(135deg, var(--rose), var(--rose-deep));
+    background:linear-gradient(135deg,var(--rose),var(--rose-deep));
     color:#fff;
     border:none;
     padding:17px 40px;
     border-radius:100px;
     cursor:pointer;
     box-shadow:0 15px 35px rgba(154,76,99,0.35);
-    transition:transform 0.35s ease, box-shadow 0.35s ease;
+    transition:transform 0.35s ease,box-shadow 0.35s ease;
     position:relative;
   }
+
   .btn:hover{
     transform:translateY(-3px) scale(1.03);
     box-shadow:0 20px 45px rgba(154,76,99,0.45);
-  }
-  .btn:focus-visible{
-    outline:3px solid var(--gold);
-    outline-offset:3px;
   }
 
   .scroll-hint{
@@ -227,6 +285,7 @@
     opacity:0;
     animation:fade-up 1s ease forwards 1.4s;
   }
+
   .scroll-hint::after{
     content:'';
     display:block;
@@ -236,20 +295,102 @@
     margin:10px auto 0;
     animation:hint-line 2s ease-in-out infinite;
   }
-  @keyframes hint-line{ 0%,100%{ transform:scaleY(0.4); opacity:0.4; } 50%{ transform:scaleY(1); opacity:1; } }
 
-  @keyframes fade-up{
-    from{ opacity:0; transform:translateY(22px); }
-    to{ opacity:1; transform:translateY(0); }
+  @keyframes hint-line{
+    0%,100%{
+      transform:scaleY(0.4);
+      opacity:0.4;
+    }
+
+    50%{
+      transform:scaleY(1);
+      opacity:1;
+    }
   }
 
-  /* ---------- reveal on scroll ---------- */
+  @keyframes fade-up{
+    from{
+      opacity:0;
+      transform:translateY(22px);
+    }
+
+    to{
+      opacity:1;
+      transform:translateY(0);
+    }
+  }
+
+  /* ---------- COUNTDOWN ---------- */
+
+  .countdown-section{
+    text-align:center;
+    background:
+      radial-gradient(circle at 20% 30%,rgba(230,220,240,0.35),transparent 45%),
+      radial-gradient(circle at 80% 70%,rgba(241,211,218,0.35),transparent 45%);
+  }
+
+  .countdown-intro{
+    max-width:600px;
+    margin:-30px auto 40px;
+    text-align:center;
+    color:var(--plum-soft);
+    line-height:1.8;
+  }
+
+  .countdown{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+    max-width:680px;
+    margin:0 auto;
+  }
+
+  .count-box{
+    background:var(--paper);
+    border:1px solid rgba(201,166,107,0.3);
+    border-radius:22px;
+    padding:28px 15px;
+    box-shadow:0 14px 34px rgba(74,43,58,0.08);
+  }
+
+  .count-number{
+    display:block;
+    font-family:'Fraunces',serif;
+    font-size:clamp(2rem,5vw,3rem);
+    color:var(--rose-deep);
+    font-weight:600;
+  }
+
+  .count-label{
+    display:block;
+    margin-top:7px;
+    text-transform:uppercase;
+    letter-spacing:0.18em;
+    font-size:0.65rem;
+    color:var(--plum-soft);
+  }
+
+  .countdown-note{
+    margin-top:28px;
+    font-family:'Parisienne',cursive;
+    font-size:1.5rem;
+    color:#a5824b;
+  }
+
+  /* ---------- REVEAL ---------- */
+
   .reveal{
     opacity:0;
     transform:translateY(36px);
-    transition:opacity 0.9s cubic-bezier(.2,.7,.3,1), transform 0.9s cubic-bezier(.2,.7,.3,1);
+    transition:
+      opacity 0.9s cubic-bezier(.2,.7,.3,1),
+      transform 0.9s cubic-bezier(.2,.7,.3,1);
   }
-  .reveal.in-view{ opacity:1; transform:translateY(0); }
+
+  .reveal.in-view{
+    opacity:1;
+    transform:translateY(0);
+  }
 
   .section-label{
     text-align:center;
@@ -263,26 +404,29 @@
 
   .section-title{
     text-align:center;
-    font-size:clamp(1.8rem, 4vw, 2.6rem);
+    font-size:clamp(1.8rem,4vw,2.6rem);
     margin-bottom:56px;
     position:relative;
     z-index:2;
   }
 
-  /* ---------- MESSAGE CARD ---------- */
+  /* ---------- MESSAGE ---------- */
+
   .message-wrap{
     display:flex;
     justify-content:center;
   }
+
   .message-card{
     background:var(--paper);
     border-radius:28px;
-    padding:clamp(32px, 6vw, 64px);
-    max-width:720px;
+    padding:clamp(32px,6vw,64px);
+    max-width:760px;
     box-shadow:var(--shadow);
     position:relative;
     border:1px solid rgba(201,166,107,0.25);
   }
+
   .message-card::before{
     content:'❧';
     position:absolute;
@@ -300,17 +444,20 @@
     justify-content:center;
     box-shadow:0 6px 18px rgba(201,166,107,0.3);
   }
+
   .message-title{
     text-align:center;
     font-size:1.6rem;
     margin-bottom:28px;
   }
+
   .message-body{
     font-size:1.08rem;
     line-height:1.9;
     color:var(--plum-soft);
     min-height:2em;
   }
+
   .message-body .cursor{
     display:inline-block;
     width:2px;
@@ -320,121 +467,177 @@
     vertical-align:middle;
     animation:blink 0.9s steps(1) infinite;
   }
-  @keyframes blink{ 50%{ opacity:0; } }
 
-  /* ---------- APPRECIATE CARDS ---------- */
+  @keyframes blink{
+    50%{
+      opacity:0;
+    }
+  }
+
+  /* ---------- 21 SECTION ---------- */
+
+  .twenty-one-intro{
+    max-width:650px;
+    margin:-30px auto 50px;
+    text-align:center;
+    line-height:1.9;
+    color:var(--plum-soft);
+  }
+
+  .wishes-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:22px;
+  }
+
+  .wish-card{
+    background:var(--paper);
+    border-radius:22px;
+    padding:30px 25px;
+    border:1px solid rgba(233,203,214,0.6);
+    box-shadow:0 12px 34px rgba(74,43,58,0.08);
+    transition:transform 0.4s ease,box-shadow 0.4s ease;
+  }
+
+  .wish-card:hover{
+    transform:translateY(-7px);
+    box-shadow:0 22px 48px rgba(74,43,58,0.14);
+  }
+
+  .wish-number{
+    font-family:'Parisienne',cursive;
+    color:var(--gold);
+    font-size:2rem;
+  }
+
+  .wish-card h3{
+    font-size:1.1rem;
+    margin:8px 0;
+  }
+
+  .wish-card p{
+    color:var(--plum-soft);
+    line-height:1.65;
+    font-size:0.9rem;
+  }
+
+  /* ---------- APPRECIATE ---------- */
+
   .cards-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
     gap:26px;
     position:relative;
     z-index:2;
   }
+
   .appreciate-card{
     background:var(--paper);
     border-radius:22px;
     padding:36px 26px;
     text-align:center;
     box-shadow:0 12px 34px rgba(74,43,58,0.08);
-    transition:transform 0.4s ease, box-shadow 0.4s ease;
+    transition:transform 0.4s ease,box-shadow 0.4s ease;
     border:1px solid rgba(233,203,214,0.6);
   }
+
   .appreciate-card:hover{
     transform:translateY(-8px);
     box-shadow:0 22px 48px rgba(74,43,58,0.15);
   }
+
   .appreciate-card .icon{
     font-size:2.1rem;
     margin-bottom:16px;
     display:block;
   }
+
   .appreciate-card h3{
     font-size:1.15rem;
     margin-bottom:8px;
   }
+
   .appreciate-card p{
     font-size:0.92rem;
     color:var(--plum-soft);
     line-height:1.6;
   }
 
-  /* ---------- MEMORIES ---------- */
-  .gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
-    gap:24px;
-    position:relative;
-    z-index:2;
-  }
-  .photo-card{
-    border-radius:20px;
-    overflow:hidden;
-    background:var(--paper);
-    box-shadow:0 14px 34px rgba(74,43,58,0.1);
-    transition:transform 0.4s ease;
-  }
-  .photo-card:hover{ transform:translateY(-6px) rotate(-0.4deg); }
-  .photo-placeholder{
-    aspect-ratio:4/5;
-    background:
-      linear-gradient(135deg, var(--blush) 0%, var(--lavender) 100%);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:2rem;
-    position:relative;
-    overflow:hidden;
-  }
-  .photo-placeholder::after{
-    content:'';
-    position:absolute;
-    inset:0;
-    background:repeating-linear-gradient(45deg, rgba(255,255,255,0.15) 0 2px, transparent 2px 14px);
-  }
-  .photo-caption{
-    padding:16px 18px 20px;
-    font-size:0.9rem;
-    color:var(--plum-soft);
-    font-style:italic;
+  /* ---------- NEW CHAPTER ---------- */
+
+  .chapter-card{
+    max-width:760px;
+    margin:0 auto;
+    background:linear-gradient(135deg,rgba(241,211,218,0.55),rgba(230,220,240,0.6));
+    border:1px solid rgba(201,166,107,0.28);
+    border-radius:30px;
+    padding:clamp(35px,6vw,65px);
+    text-align:center;
+    box-shadow:var(--shadow);
   }
 
-  /* ---------- GIFT SECTION ---------- */
+  .chapter-age{
+    font-family:'Parisienne',cursive;
+    font-size:4rem;
+    color:var(--rose-deep);
+    line-height:1;
+    margin-bottom:15px;
+  }
+
+  .chapter-card h3{
+    font-size:1.7rem;
+    margin-bottom:22px;
+  }
+
+  .chapter-card p{
+    color:var(--plum-soft);
+    line-height:1.9;
+    font-size:1.03rem;
+  }
+
+  /* ---------- GIFT ---------- */
+
   .gift-section{
     text-align:center;
   }
+
   .gift-box-wrap{
     display:flex;
     justify-content:center;
     margin:50px 0 40px;
     perspective:900px;
   }
+
   .gift-box{
     width:180px;
     height:150px;
     position:relative;
     cursor:pointer;
   }
+
   .gift-base{
     position:absolute;
     bottom:0;
     width:180px;
     height:110px;
-    background:linear-gradient(135deg, var(--rose), var(--rose-deep));
+    background:linear-gradient(135deg,var(--rose),var(--rose-deep));
     border-radius:10px;
     box-shadow:0 20px 40px rgba(154,76,99,0.3);
   }
+
   .gift-lid{
     position:absolute;
     top:26px;
     width:196px;
     left:-8px;
     height:38px;
-    background:linear-gradient(135deg, var(--rose-deep), var(--plum-soft));
+    background:linear-gradient(135deg,var(--rose-deep),var(--plum-soft));
     border-radius:8px;
-    transition:transform 0.8s cubic-bezier(.3,1.4,.4,1), opacity 0.6s ease;
+    transition:transform 0.8s cubic-bezier(.3,1.4,.4,1),opacity 0.6s ease;
     transform-origin:center;
     z-index:3;
   }
+
   .gift-ribbon-v{
     position:absolute;
     left:50%;
@@ -442,9 +645,10 @@
     bottom:0;
     width:22px;
     transform:translateX(-50%);
-    background:linear-gradient(180deg, var(--gold), var(--gold-soft));
+    background:linear-gradient(180deg,var(--gold),var(--gold-soft));
     z-index:2;
   }
+
   .gift-ribbon-h{
     position:absolute;
     top:26px;
@@ -452,9 +656,10 @@
     right:-8px;
     height:22px;
     margin:auto 0;
-    background:linear-gradient(90deg, var(--gold), var(--gold-soft));
+    background:linear-gradient(90deg,var(--gold),var(--gold-soft));
     z-index:4;
   }
+
   .gift-bow{
     position:absolute;
     top:-6px;
@@ -462,19 +667,25 @@
     transform:translateX(-50%);
     font-size:2.2rem;
     z-index:5;
-    transition:transform 0.6s ease, opacity 0.6s ease;
+    transition:transform 0.6s ease,opacity 0.6s ease;
   }
+
   .gift-box.opened .gift-lid{
     transform:translateY(-120px) rotate(-18deg);
     opacity:0;
   }
+
   .gift-box.opened .gift-bow{
     transform:translate(-50%,-130px) rotate(30deg) scale(0.8);
     opacity:0;
   }
+
   .gift-box.opened .gift-base{
-    box-shadow:0 20px 60px rgba(154,76,99,0.45), 0 0 60px rgba(201,166,107,0.5);
+    box-shadow:
+      0 20px 60px rgba(154,76,99,0.45),
+      0 0 60px rgba(201,166,107,0.5);
   }
+
   .gift-glow{
     position:absolute;
     top:20px;
@@ -483,24 +694,31 @@
     width:120px;
     height:120px;
     border-radius:50%;
-    background:radial-gradient(circle, rgba(255,240,220,0.9), transparent 70%);
+    background:radial-gradient(circle,rgba(255,240,220,0.9),transparent 70%);
     opacity:0;
     transition:opacity 0.6s ease;
     z-index:1;
   }
-  .gift-box.opened .gift-glow{ opacity:1; }
+
+  .gift-box.opened .gift-glow{
+    opacity:1;
+  }
 
   .gift-reveal{
-    max-width:560px;
+    max-width:650px;
     margin:0 auto;
-    font-size:1.15rem;
-    line-height:1.8;
+    font-size:1.08rem;
+    line-height:1.9;
     color:var(--plum-soft);
     opacity:0;
     transform:translateY(14px);
-    transition:opacity 0.8s ease, transform 0.8s ease;
+    transition:opacity 0.8s ease,transform 0.8s ease;
   }
-  .gift-reveal.show{ opacity:1; transform:translateY(0); }
+
+  .gift-reveal.show{
+    opacity:1;
+    transform:translateY(0);
+  }
 
   .gift-hint{
     margin-top:18px;
@@ -509,7 +727,8 @@
     opacity:0.75;
   }
 
-  /* confetti */
+  /* ---------- CONFETTI ---------- */
+
   .confetti-piece{
     position:fixed;
     top:-20px;
@@ -519,40 +738,57 @@
     pointer-events:none;
     animation:confetti-fall linear forwards;
   }
+
   @keyframes confetti-fall{
-    to{ transform:translateY(105vh) rotate(540deg); opacity:0.9; }
+    to{
+      transform:translateY(105vh) rotate(540deg);
+      opacity:0.9;
+    }
   }
 
-  /* ---------- FINAL SECTION ---------- */
+  /* ---------- FINAL ---------- */
+
   .final-section{
     text-align:center;
     padding-bottom:160px;
   }
-  .final-section .section-label{ margin-bottom:8px; }
+
+  .final-section .section-label{
+    margin-bottom:8px;
+  }
+
   .final-cheer{
     font-size:1.15rem;
     color:var(--plum-soft);
-    max-width:480px;
+    max-width:560px;
     margin:0 auto 50px;
+    line-height:1.8;
   }
+
   .final-name{
-    font-family:'Fraunces', serif;
+    font-family:'Fraunces',serif;
     font-weight:600;
-    font-size:clamp(2.2rem, 6vw, 4rem);
+    font-size:clamp(2.2rem,6vw,4rem);
     color:var(--rose-deep);
     text-shadow:0 0 30px rgba(181,101,125,0.25);
-    animation:glow-pulse 3.5s ease-in-out infinite;
+    animation:glow-pulse-final 3.5s ease-in-out infinite;
     letter-spacing:0.02em;
   }
-  @keyframes glow-pulse{
-    0%,100%{ text-shadow:0 0 20px rgba(181,101,125,0.2); }
-    50%{ text-shadow:0 0 40px rgba(181,101,125,0.45); }
+
+  @keyframes glow-pulse-final{
+    0%,100%{
+      text-shadow:0 0 20px rgba(181,101,125,0.2);
+    }
+
+    50%{
+      text-shadow:0 0 40px rgba(181,101,125,0.45);
+    }
   }
+
   .final-sub{
     margin-top:22px;
-    font-family:'Parisienne', cursive;
+    font-family:'Parisienne',cursive;
     font-size:1.6rem;
-    color:var(--gold-soft);
     color:#a5824b;
   }
 
@@ -564,303 +800,1141 @@
     opacity:0.65;
   }
 
-  @media (max-width: 640px){
-    section{ padding:80px 20px; }
-    .message-card{ padding:32px 22px; }
+  @media(max-width:640px){
+
+    section{
+      padding:80px 20px;
+    }
+
+    .message-card{
+      padding:32px 22px;
+    }
+
+    .countdown{
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
+    }
+
+    .count-box{
+      padding:22px 12px;
+    }
+
+    .chapter-card{
+      padding:38px 25px;
+    }
   }
 </style>
 </head>
+
 <body>
 
 <div class="floaters" id="floaters"></div>
 
 <button class="music-toggle" id="musicToggle" aria-label="Toggle background music" aria-pressed="false">
   <svg viewBox="0 0 24 24" aria-hidden="true">
-    <path id="musicIconPath" d="M9 18V5l12-2v13" fill="none" stroke="currentColor" stroke-width="1.6" class="static-icon"/>
-    <circle cx="6" cy="18" r="3" fill="currentColor" class="static-icon"/>
-    <circle cx="18" cy="16" r="3" fill="currentColor" class="static-icon"/>
+    <path d="M9 18V5l12-2v13" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    <circle cx="6" cy="18" r="3" fill="currentColor"/>
+    <circle cx="18" cy="16" r="3" fill="currentColor"/>
   </svg>
 </button>
 
+
 <!-- HERO -->
+
 <section class="hero">
+
   <div class="glow"></div>
-  <div class="eyebrow">a little something for you</div>
-  <h1>Happy Birthday<span class="script name">Sunmisola</span></h1>
-  <p class="subtitle">Today is all about celebrating the beautiful person you are.</p>
-  <div class="cta">
-    <button class="btn" id="openSurprise">Open Your Surprise 💌</button>
+
+  <div class="eyebrow">
+    a little something for you
   </div>
-  <div class="scroll-hint">scroll</div>
+
+  <h1>
+    Happy Birthday
+    <span class="script name">Sunmisola</span>
+  </h1>
+
+  <p class="subtitle">
+    Today isn't just another day. It's the beginning of another beautiful chapter in the life of someone truly special.
+  </p>
+
+  <div class="age-badge">
+    celebrating 21 beautiful years ✨
+  </div>
+
+  <div class="cta">
+    <button class="btn" id="openSurprise">
+      Open Your Surprise 💌
+    </button>
+  </div>
+
+  <div class="scroll-hint">
+    scroll
+  </div>
+
 </section>
+
+
+<!-- COUNTDOWN -->
+
+<section class="countdown-section">
+
+  <div class="section-label reveal">
+    almost time
+  </div>
+
+  <h2 class="section-title reveal">
+    Counting Down To Your Day 🎂
+  </h2>
+
+  <p class="countdown-intro reveal">
+    There's something beautiful about knowing that a special day is almost here.
+    So until the clock finally reaches your birthday, here's a little reminder
+    that someone is counting down to celebrating you.
+  </p>
+
+  <div class="countdown reveal">
+
+    <div class="count-box">
+      <span class="count-number" id="days">00</span>
+      <span class="count-label">Days</span>
+    </div>
+
+    <div class="count-box">
+      <span class="count-number" id="hours">00</span>
+      <span class="count-label">Hours</span>
+    </div>
+
+    <div class="count-box">
+      <span class="count-number" id="minutes">00</span>
+      <span class="count-label">Minutes</span>
+    </div>
+
+    <div class="count-box">
+      <span class="count-number" id="seconds">00</span>
+      <span class="count-label">Seconds</span>
+    </div>
+
+  </div>
+
+  <p class="countdown-note" id="countdownNote">
+    until we celebrate you 💗
+  </p>
+
+</section>
+
 
 <!-- MESSAGE -->
+
 <section id="message-section">
-  <div class="section-label reveal">for you</div>
-  <div class="message-wrap reveal">
-    <div class="message-card">
-      <h2 class="message-title">A Little Message For You 💗</h2>
-      <p class="message-body" id="typewriterTarget"></p>
-    </div>
+
+  <div class="section-label reveal">
+    for you
   </div>
+
+  <div class="message-wrap reveal">
+
+    <div class="message-card">
+
+      <h2 class="message-title">
+        A Little Message For You 💗
+      </h2>
+
+      <p class="message-body" id="typewriterTarget"></p>
+
+    </div>
+
+  </div>
+
 </section>
 
-<!-- APPRECIATE -->
+
+<!-- 21 WISHES -->
+
 <section>
-  <div class="section-label reveal">what makes you, you</div>
-  <h2 class="section-title reveal">Things I Appreciate About You</h2>
+
+  <div class="section-label reveal">
+    chapter twenty-one
+  </div>
+
+  <h2 class="section-title reveal">
+    21 Things I Wish For You ✨
+  </h2>
+
+  <p class="twenty-one-intro reveal">
+    Twenty-one is more than just a number. It's another milestone,
+    another chapter, another opportunity to discover yourself,
+    chase your dreams, make memories and become even more of the
+    person you're meant to be.
+  </p>
+
+  <div class="wishes-grid">
+
+    <div class="wish-card reveal">
+      <span class="wish-number">01</span>
+      <h3>Peace</h3>
+      <p>May your heart always find peace, even when life gets a little overwhelming.</p>
+    </div>
+
+    <div class="wish-card reveal">
+      <span class="wish-number">02</span>
+      <h3>Happiness</h3>
+      <p>May you experience the kind of happiness that doesn't need a reason to exist.</p>
+    </div>
+
+    <div class="wish-card reveal">
+      <span class="wish-number">03</span>
+      <h3>Growth</h3>
+      <p>May every experience help you become wiser, stronger and even more confident.</p>
+    </div>
+
+    <div class="wish-card reveal">
+      <span class="wish-number">04</span>
+      <h3>Beautiful Memories</h3>
+      <p>May this year give you moments you'll look back on and smile about for years.</p>
+    </div>
+
+    <div class="wish-card reveal">
+      <span class="wish-number">05</span>
+      <h3>Good People</h3>
+      <p>May you always be surrounded by people who genuinely care about you.</p>
+    </div>
+
+    <div class="wish-card reveal">
+      <span class="wish-number">06</span>
+      <h3>Confidence</h3>
+      <p>May you always remember that you are capable of more than you sometimes realize.</p>
+    </div>
+
+    <div class="wish-card reveal">
+      <span class="wish-number">07</span>
+      <h3>Adventure</h3>
+      <p>May you experience new places, new opportunities and plenty of beautiful surprises.</p>
+    </div>
+
+    <div class="wish-card reveal">
+      <span class="wish-number">08</span>
+      <h3>Purpose</h3>
+      <p>May you continue discovering the things that make your life meaningful.</p>
+    </div>
+
+    <div class="wish-card reveal">
+      <span class="wish-number">09</span>
+      <h3>Answered Prayers</h3>
+      <p>May the things you've quietly wished for find their way to you at the right time.</p>
+    </div>
+
+    <div class="wish-card reveal">
+      <span class="wish-number">10</span>
+      <h3>Success</h3>
+      <p>May your efforts open doors and take you closer to the future you dream about.</p>
+    </div>
+
+    <div class="wish-card reveal">
+      <span class="wish-number">11</span>
+      <h3>Laughter</h3>
+      <p>May you never run out of reasons to laugh until your stomach hurts.</p>
+    </div>
+
+    <div class="wish-card reveal">
+      <span class="wish-number">12</span>
+      <h3>Kindness</h3>
+      <p>May the kindness you give to others always find its way back to you.</p>
+    </div>
+
+    <div class="wish-card reveal">
+      <span class="wish-number">13</span>
+      <h3>Courage</h3>
+      <p>May you have the courage to choose yourself and pursue what truly matters.</p>
+    </div>
+
+    <div class="wish-card reveal">
+      <span class="wish-number">14</span>
+      <h3>Love</h3>
+      <p>May you always know that you are appreciated, valued and deeply cared for.</p>
+    </div>
+
+    <div class="wish-card reveal">
+      <span class="wish-number">15</span>
+      <h3>Opportunities</h3>
+      <p>May unexpected opportunities find you when you least expect them.</p>
+    </div>
+
+    <div class="wish-card reveal">
+      <span class="wish-number">16</span>
+      <h3>Strength</h3>
+      <p>May difficult seasons never make you forget how strong you really are.</p>
+    </div>
+
+    <div class="wish-card reveal">
+      <span class="wish-number">17</span>
+      <h3>Self Discovery</h3>
+      <p>May twenty-one be a year where you discover even more reasons to love who you are.</p>
+    </div>
+
+    <div class="wish-card reveal">
+      <span class="wish-number">18</span>
+      <h3>Small Victories</h3>
+      <p>May you learn to celebrate every little win along the way.</p>
+    </div>
+
+    <div class="wish-card reveal">
+      <span class="wish-number">19</span>
+      <h3>Big Dreams</h3>
+      <p>May you never become afraid of dreaming bigger than you've ever dreamed before.</p>
+    </div>
+
+    <div class="wish-card reveal">
+      <span class="wish-number">20</span>
+      <h3>Good Days</h3>
+      <p>May the good days outweigh the difficult ones, and may the difficult ones teach you something beautiful.</p>
+    </div>
+
+    <div class="wish-card reveal">
+      <span class="wish-number">21</span>
+      <h3>A Beautiful Year</h3>
+      <p>Most importantly, may 21 be a chapter you'll always remember with a smile.</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- APPRECIATION -->
+
+<section>
+
+  <div class="section-label reveal">
+    what makes you, you
+  </div>
+
+  <h2 class="section-title reveal">
+    Things I Appreciate About You
+  </h2>
+
   <div class="cards-grid">
+
     <div class="appreciate-card reveal">
       <span class="icon">💗</span>
       <h3>Your Kind Heart</h3>
-      <p>The way you think of others before yourself, always.</p>
+      <p>
+        The way you think of others and care about the people around you
+        is something genuinely beautiful.
+      </p>
     </div>
+
     <div class="appreciate-card reveal">
       <span class="icon">✨</span>
       <h3>Your Beautiful Energy</h3>
-      <p>You light up every room the moment you walk in.</p>
+      <p>
+        You have a way of making ordinary moments feel lighter,
+        warmer and a little more memorable.
+      </p>
     </div>
+
     <div class="appreciate-card reveal">
       <span class="icon">😂</span>
       <h3>Your Sense of Humor</h3>
-      <p>Nobody makes me laugh quite the way you do.</p>
+      <p>
+        The random conversations, jokes and moments that somehow
+        turn into memories are some of the best.
+      </p>
     </div>
+
     <div class="appreciate-card reveal">
       <span class="icon">🌷</span>
       <h3>The Way You Care</h3>
-      <p>You show up for the people you love, no matter what.</p>
+      <p>
+        You have a beautiful way of showing people that they matter,
+        even through the smallest things.
+      </p>
     </div>
+
     <div class="appreciate-card reveal">
       <span class="icon">🦋</span>
       <h3>Your Strength</h3>
-      <p>The grace with which you carry every challenge you face.</p>
+      <p>
+        You've grown through different seasons of life,
+        and there's something admirable about the person you're becoming.
+      </p>
     </div>
+
     <div class="appreciate-card reveal">
       <span class="icon">🌟</span>
       <h3>The Person You're Becoming</h3>
-      <p>Watching you grow is one of my favorite things.</p>
+      <p>
+        Twenty-one looks like another beautiful step toward the person
+        you are meant to become.
+      </p>
     </div>
+
   </div>
+
 </section>
 
-<!-- MEMORIES -->
-<!-- <section>
-  <div class="section-label reveal">a look back</div>
-  <h2 class="section-title reveal">Little Moments, Big Memories 📸</h2>
-  <div class="gallery">
-    <div class="photo-card reveal">
-      <div class="photo-placeholder">🌸</div>
-      <p class="photo-caption">that day we couldn't stop laughing</p>
-    </div>
-    <div class="photo-card reveal">
-      <div class="photo-placeholder">🎉</div>
-      <p class="photo-caption">the best kind of chaos</p>
-    </div>
-    <div class="photo-card reveal">
-      <div class="photo-placeholder">🥂</div>
-      <p class="photo-caption">celebrating the little wins</p>
-    </div>
-    <div class="photo-card reveal">
-      <div class="photo-placeholder">🌷</div>
-      <p class="photo-caption">just us, being us</p>
-    </div>
+
+<!-- NEW CHAPTER -->
+
+<section>
+
+  <div class="section-label reveal">
+    welcome to 21
   </div>
-  <p style="text-align:center; margin-top:26px; font-size:0.85rem; color:var(--plum-soft); opacity:0.7;" class="reveal">
-    (swap these in for your favorite photos together 💗)
-  </p>
-</section> -->
+
+  <h2 class="section-title reveal">
+    A New Chapter Begins 🌷
+  </h2>
+
+  <div class="chapter-card reveal">
+
+    <div class="chapter-age">
+      21
+    </div>
+
+    <h3>
+      Here's to the woman you're becoming.
+    </h3>
+
+    <p>
+      Twenty-one is a beautiful place to be. You're no longer the person
+      you were a few years ago, but you're also still discovering so many
+      parts of yourself. And honestly, that's one of the most beautiful
+      things about growing up.
+
+      <br><br>
+
+      There will be days when everything makes sense and days when it
+      doesn't. There will be unexpected opportunities, new memories,
+      lessons, laughter, changes and moments that you'll carry with you
+      for a very long time.
+
+      <br><br>
+
+      So don't rush through this chapter. Enjoy it. Make mistakes.
+      Learn. Laugh loudly. Try new things. Protect your peace.
+      Celebrate yourself. Keep your heart kind.
+
+      <br><br>
+
+      And wherever this new year takes you, I hope you always remember
+      just how special you are.
+    </p>
+
+  </div>
+
+</section>
+
 
 <!-- GIFT -->
+
 <section class="gift-section">
-  <div class="section-label reveal">one more thing</div>
-  <h2 class="section-title reveal">There's Still One More Thing...</h2>
+
+  <div class="section-label reveal">
+    one more thing
+  </div>
+
+  <h2 class="section-title reveal">
+    There's Still One More Thing...
+  </h2>
+
   <div class="gift-box-wrap reveal">
-    <div class="gift-box" id="giftBox" role="button" tabindex="0" aria-label="Open your gift">
+
+    <div
+      class="gift-box"
+      id="giftBox"
+      role="button"
+      tabindex="0"
+      aria-label="Open your gift"
+    >
+
       <div class="gift-glow"></div>
       <div class="gift-base"></div>
       <div class="gift-ribbon-v"></div>
       <div class="gift-lid"></div>
       <div class="gift-ribbon-h"></div>
       <div class="gift-bow">🎀</div>
+
     </div>
+
   </div>
-  <p class="gift-hint reveal" id="giftHint">tap the gift to open it</p>
-  <p class="gift-reveal" id="giftReveal">Here's to more laughter, more adventures, more unforgettable memories, and an amazing new chapter. 💗</p>
+
+  <p class="gift-hint reveal" id="giftHint">
+    tap the gift to open it
+  </p>
+
+  <p class="gift-reveal" id="giftReveal">
+
+    If I could put one thing inside this box, it wouldn't be something
+    you could wrap with paper or tie with a ribbon.
+
+    <br><br>
+
+    It would be every good memory you've ever made, every laugh that
+    made you forget your worries, every person who genuinely cares
+    about you, and every beautiful moment that's still waiting for you.
+
+    <br><br>
+
+    Since I can't fit all of that inside a box, I'll just give you
+    this instead:
+
+    <br><br>
+
+    A reminder that you deserve beautiful things, beautiful moments,
+    genuine happiness and a life filled with reasons to smile.
+
+    <br><br>
+
+    Here's to 21. Here's to everything you've survived, everything
+    you've learned, everything you've become and everything you're
+    still going to become.
+
+    <br><br>
+
+    Happy 21st Birthday, Sunmisola. 💗🎂✨
+
+  </p>
+
 </section>
+
 
 <!-- FINAL -->
+
 <section class="final-section">
-  <div class="section-label reveal">a final cheer</div>
-  <h2 class="section-title reveal">Cheers to You, Sunmisola! 🥂✨</h2>
-  <p class="final-cheer reveal">May this new chapter be your happiest one yet.</p>
-  <div class="final-name reveal">HAPPY BIRTHDAY SUNMISOLA 💗</div>
-  <div class="final-sub reveal">with so much love</div>
+
+  <div class="section-label reveal">
+    a final cheer
+  </div>
+
+  <h2 class="section-title reveal">
+    Cheers to You, Sunmisola! 🥂✨
+  </h2>
+
+  <p class="final-cheer reveal">
+
+    May twenty-one bring you beautiful surprises,
+    genuine happiness, answered prayers, unforgettable memories,
+    new opportunities and countless reasons to be proud of yourself.
+
+    <br><br>
+
+    May you continue to grow into the person you're meant to be,
+    while never forgetting the beautiful person you already are.
+
+    <br><br>
+
+    This is your chapter.
+
+    <br>
+
+    Make it beautiful. 🌷
+
+  </p>
+
+  <div class="final-name reveal">
+    HAPPY 21ST BIRTHDAY SUNMISOLA 💗
+  </div>
+
+  <div class="final-sub reveal">
+    with so much love
+  </div>
+
 </section>
 
-<footer>made with 💗 just for you</footer>
+
+<footer>
+  made with 💗 just for you
+</footer>
+
 
 <script>
+
 (function(){
-  // ---------- Ambient floating hearts / sparkles ----------
+
+  /* ---------- FLOATING HEARTS / SPARKLES ---------- */
+
   const floaters = document.getElementById('floaters');
+
   const symbols = ['💗','✨','🌸','💫','🌷'];
+
   function spawnFloater(){
+
     const el = document.createElement('div');
+
     el.className = 'floater';
-    el.textContent = symbols[Math.floor(Math.random()*symbols.length)];
-    const size = 12 + Math.random()*16;
+
+    el.textContent =
+      symbols[Math.floor(Math.random() * symbols.length)];
+
+    const size = 12 + Math.random() * 16;
+
     el.style.fontSize = size + 'px';
-    el.style.left = Math.random()*100 + 'vw';
+
+    el.style.left = Math.random() * 100 + 'vw';
+
     el.style.bottom = '-40px';
-    const duration = 10 + Math.random()*10;
+
+    const duration = 10 + Math.random() * 10;
+
     el.style.animationDuration = duration + 's';
+
     floaters.appendChild(el);
-    setTimeout(()=> el.remove(), duration*1000 + 500);
+
+    setTimeout(
+      () => el.remove(),
+      duration * 1000 + 500
+    );
   }
-  setInterval(spawnFloater, 1400);
-  for(let i=0;i<4;i++) setTimeout(spawnFloater, i*400);
 
-  // ---------- Scroll reveal ----------
-  const revealEls = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        entry.target.classList.add('in-view');
-        io.unobserve(entry.target);
-      }
+  setInterval(spawnFloater,1400);
+
+  for(let i = 0; i < 4; i++){
+    setTimeout(spawnFloater,i * 400);
+  }
+
+
+  /* ---------- SCROLL REVEAL ---------- */
+
+  const revealEls =
+    document.querySelectorAll('.reveal');
+
+  const io = new IntersectionObserver(
+    (entries) => {
+
+      entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+
+          entry.target.classList.add('in-view');
+
+          io.unobserve(entry.target);
+
+        }
+
+      });
+
+    },
+    {
+      threshold:0.15
+    }
+  );
+
+  revealEls.forEach(el => io.observe(el));
+
+
+  /* ---------- SURPRISE BUTTON ---------- */
+
+  document
+    .getElementById('openSurprise')
+    .addEventListener('click',() => {
+
+      document
+        .getElementById('message-section')
+        .scrollIntoView({
+          behavior:'smooth'
+        });
+
     });
-  }, { threshold: 0.15 });
-  revealEls.forEach(el=> io.observe(el));
 
-  // ---------- Smooth scroll on surprise button ----------
-  document.getElementById('openSurprise').addEventListener('click', ()=>{
-    document.getElementById('message-section').scrollIntoView({ behavior:'smooth' });
-  });
 
-  // ---------- Typewriter message ----------
-  const message = "Happy Birthday, Sunmisola! I hope you know just how special you are to the people around you. Your presence has a way of making ordinary moments feel a little brighter, and I'm genuinely grateful for every memory, laugh, conversation, and moment we've shared. As you step into another year, I pray it brings you happiness, peace, growth, beautiful opportunities, and countless reasons to smile. May the things you've been hoping for slowly find their way to you. Keep being the amazing person you are, and never forget how loved and appreciated you are. Here's to another beautiful chapter of your life. Happy Birthday once again! 💕🎂✨";
-  const target = document.getElementById('typewriterTarget');
+  /* ---------- COUNTDOWN ---------- */
+
+  const daysEl =
+    document.getElementById('days');
+
+  const hoursEl =
+    document.getElementById('hours');
+
+  const minutesEl =
+    document.getElementById('minutes');
+
+  const secondsEl =
+    document.getElementById('seconds');
+
+  const countdownNote =
+    document.getElementById('countdownNote');
+
+
+  function getNextBirthday(){
+
+    const now = new Date();
+
+    let birthday =
+      new Date(
+        now.getFullYear(),
+        8,
+        9,
+        0,
+        0,
+        0
+      );
+
+    if(now >= birthday){
+
+      birthday =
+        new Date(
+          now.getFullYear() + 1,
+          8,
+          9,
+          0,
+          0,
+          0
+        );
+
+    }
+
+    return birthday;
+
+  }
+
+
+  function updateCountdown(){
+
+    const now = new Date();
+
+    const birthday =
+      getNextBirthday();
+
+    const difference =
+      birthday - now;
+
+
+    if(difference <= 0){
+
+      daysEl.textContent = '00';
+      hoursEl.textContent = '00';
+      minutesEl.textContent = '00';
+      secondsEl.textContent = '00';
+
+      countdownNote.textContent =
+        'Happy Birthday, Sunmisola! 🎂💗✨';
+
+      return;
+
+    }
+
+
+    const days =
+      Math.floor(
+        difference / (1000 * 60 * 60 * 24)
+      );
+
+    const hours =
+      Math.floor(
+        (difference / (1000 * 60 * 60)) % 24
+      );
+
+    const minutes =
+      Math.floor(
+        (difference / (1000 * 60)) % 60
+      );
+
+    const seconds =
+      Math.floor(
+        (difference / 1000) % 60
+      );
+
+
+    daysEl.textContent =
+      String(days).padStart(2,'0');
+
+    hoursEl.textContent =
+      String(hours).padStart(2,'0');
+
+    minutesEl.textContent =
+      String(minutes).padStart(2,'0');
+
+    secondsEl.textContent =
+      String(seconds).padStart(2,'0');
+
+
+    if(
+      now.getMonth() === 8 &&
+      now.getDate() === 8
+    ){
+
+      countdownNote.textContent =
+        'tomorrow, we celebrate you 💗';
+
+    }else{
+
+      countdownNote.textContent =
+        'until we celebrate you 💗';
+
+    }
+
+  }
+
+
+  updateCountdown();
+
+  setInterval(updateCountdown,1000);
+
+
+  /* ---------- TYPEWRITER MESSAGE ---------- */
+
+  const message =
+
+  "Happy Birthday, Sunmisola! 💗 Today, you officially step into 21, and I honestly hope you take a moment to appreciate just how far you've come. Twenty-one years of growing, learning, laughing, changing, making memories and becoming the person you are today. I hope you know that your presence means more than you probably realize. There are people whose days are brighter simply because you're part of their lives, and you're one of those people. I appreciate the little things about you, the conversations, the random moments, the laughter, the way you care, and all those simple memories that somehow become the ones we remember most. As you enter this new chapter, I pray that life is kind to you. I pray that you find happiness in places you never expected, that your efforts begin to produce beautiful results, that your dreams become closer, and that the things you've quietly prayed for find their way to you. I hope 21 gives you countless reasons to smile, unforgettable memories to look back on, amazing opportunities to grow, and people who remind you how loved and appreciated you are. Never feel like you have to have everything figured out. You're allowed to grow at your own pace, change your mind, discover new things and become whoever you want to become. Just keep being you. Keep your beautiful heart, keep your laughter, keep your kindness, keep dreaming and keep moving forward. Here's to 21, to everything you've experienced so far and to every beautiful thing that's still ahead. Happy 21st Birthday, Sunmisola. May this chapter be one of your most beautiful yet. 💕🎂✨";
+
+
+  const target =
+    document.getElementById('typewriterTarget');
+
   let typed = false;
-  const messageSection = document.getElementById('message-section');
-  const typeIO = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting && !typed){
-        typed = true;
-        typeMessage();
-        typeIO.disconnect();
+
+  const messageSection =
+    document.getElementById('message-section');
+
+
+  const typeIO =
+    new IntersectionObserver(
+      (entries) => {
+
+        entries.forEach(entry => {
+
+          if(entry.isIntersecting && !typed){
+
+            typed = true;
+
+            typeMessage();
+
+            typeIO.disconnect();
+
+          }
+
+        });
+
+      },
+      {
+        threshold:0.3
       }
-    });
-  }, { threshold: 0.3 });
+    );
+
+
   typeIO.observe(messageSection);
 
+
   function typeMessage(){
-    const cursor = document.createElement('span');
+
+    const cursor =
+      document.createElement('span');
+
     cursor.className = 'cursor';
+
     target.appendChild(cursor);
+
     let i = 0;
-    const speed = 18;
+
+    const speed = 15;
+
+
     function step(){
+
       if(i < message.length){
-        cursor.insertAdjacentText('beforebegin', message[i]);
+
+        cursor.insertAdjacentText(
+          'beforebegin',
+          message[i]
+        );
+
         i++;
-        setTimeout(step, speed);
-      } else {
+
+        setTimeout(step,speed);
+
+      }else{
+
         cursor.remove();
+
       }
+
     }
+
     step();
+
   }
 
-  // ---------- Gift box open ----------
-  const giftBox = document.getElementById('giftBox');
-  const giftReveal = document.getElementById('giftReveal');
-  const giftHint = document.getElementById('giftHint');
+
+  /* ---------- GIFT BOX ---------- */
+
+  const giftBox =
+    document.getElementById('giftBox');
+
+  const giftReveal =
+    document.getElementById('giftReveal');
+
+  const giftHint =
+    document.getElementById('giftHint');
+
   let giftOpened = false;
 
+
   function openGift(){
+
     if(giftOpened) return;
+
     giftOpened = true;
+
     giftBox.classList.add('opened');
+
     giftHint.style.opacity = '0';
-    setTimeout(()=>{
+
+
+    setTimeout(() => {
+
       giftReveal.classList.add('show');
-    }, 500);
+
+    },500);
+
+
     launchConfetti();
+
   }
-  giftBox.addEventListener('click', openGift);
-  giftBox.addEventListener('keydown', (e)=>{
-    if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openGift(); }
-  });
+
+
+  giftBox.addEventListener(
+    'click',
+    openGift
+  );
+
+
+  giftBox.addEventListener(
+    'keydown',
+    (e) => {
+
+      if(
+        e.key === 'Enter' ||
+        e.key === ' '
+      ){
+
+        e.preventDefault();
+
+        openGift();
+
+      }
+
+    }
+  );
+
+
+  /* ---------- CONFETTI ---------- */
 
   function launchConfetti(){
-    const colors = ['#B5657D','#E7B9C4','#C9A66B','#E6DCF0','#9A4C63'];
-    for(let i=0;i<60;i++){
-      setTimeout(()=>{
-        const piece = document.createElement('div');
-        piece.className = 'confetti-piece';
-        piece.style.left = Math.random()*100 + 'vw';
-        piece.style.background = colors[Math.floor(Math.random()*colors.length)];
-        piece.style.animationDuration = (2.2 + Math.random()*1.6) + 's';
-        piece.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+
+    const colors = [
+      '#B5657D',
+      '#E7B9C4',
+      '#C9A66B',
+      '#E6DCF0',
+      '#9A4C63'
+    ];
+
+
+    for(let i = 0; i < 60; i++){
+
+      setTimeout(() => {
+
+        const piece =
+          document.createElement('div');
+
+        piece.className =
+          'confetti-piece';
+
+        piece.style.left =
+          Math.random() * 100 + 'vw';
+
+        piece.style.background =
+          colors[
+            Math.floor(
+              Math.random() * colors.length
+            )
+          ];
+
+        piece.style.animationDuration =
+          (2.2 + Math.random() * 1.6) + 's';
+
+        piece.style.borderRadius =
+          Math.random() > 0.5
+            ? '50%'
+            : '2px';
+
         document.body.appendChild(piece);
-        setTimeout(()=> piece.remove(), 4200);
-      }, i*18);
+
+        setTimeout(
+          () => piece.remove(),
+          4200
+        );
+
+      },i * 18);
+
     }
+
   }
 
-  // ---------- Music toggle (no autoplay; tasteful tone via WebAudio, manual only) ----------
-  const musicToggle = document.getElementById('musicToggle');
+
+  /* ---------- MUSIC ---------- */
+
+  const musicToggle =
+    document.getElementById('musicToggle');
+
   let audioCtx = null;
+
   let playing = false;
+
   let musicNodes = [];
 
+
   function startAmbientMusic(){
-    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    const notes = [261.63, 329.63, 392.00, 523.25]; // C E G C - gentle arpeggio loop
-    const masterGain = audioCtx.createGain();
+
+    audioCtx =
+      new (
+        window.AudioContext ||
+        window.webkitAudioContext
+      )();
+
+
+    const notes = [
+      261.63,
+      329.63,
+      392.00,
+      523.25
+    ];
+
+
+    const masterGain =
+      audioCtx.createGain();
+
     masterGain.gain.value = 0.05;
-    masterGain.connect(audioCtx.destination);
+
+    masterGain.connect(
+      audioCtx.destination
+    );
+
     musicNodes.push(masterGain);
 
+
     let step = 0;
-    const interval = setInterval(()=>{
-      if(!playing){ clearInterval(interval); return; }
-      const osc = audioCtx.createOscillator();
-      const gain = audioCtx.createGain();
-      osc.type = 'sine';
-      osc.frequency.value = notes[step % notes.length];
-      gain.gain.setValueAtTime(0, audioCtx.currentTime);
-      gain.gain.linearRampToValueAtTime(0.6, audioCtx.currentTime + 0.15);
-      gain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 1.1);
-      osc.connect(gain);
-      gain.connect(masterGain);
-      osc.start();
-      osc.stop(audioCtx.currentTime + 1.2);
-      step++;
-    }, 700);
-    musicNodes.push({ stop: ()=> clearInterval(interval) });
+
+
+    const interval =
+      setInterval(() => {
+
+        if(!playing){
+
+          clearInterval(interval);
+
+          return;
+
+        }
+
+
+        const osc =
+          audioCtx.createOscillator();
+
+        const gain =
+          audioCtx.createGain();
+
+
+        osc.type = 'sine';
+
+        osc.frequency.value =
+          notes[
+            step % notes.length
+          ];
+
+
+        gain.gain.setValueAtTime(
+          0,
+          audioCtx.currentTime
+        );
+
+
+        gain.gain.linearRampToValueAtTime(
+          0.6,
+          audioCtx.currentTime + 0.15
+        );
+
+
+        gain.gain.linearRampToValueAtTime(
+          0,
+          audioCtx.currentTime + 1.1
+        );
+
+
+        osc.connect(gain);
+
+        gain.connect(masterGain);
+
+
+        osc.start();
+
+        osc.stop(
+          audioCtx.currentTime + 1.2
+        );
+
+
+        step++;
+
+      },700);
+
+
+    musicNodes.push({
+      stop:() => clearInterval(interval)
+    });
+
   }
+
 
   function stopAmbientMusic(){
+
     if(audioCtx){
+
       audioCtx.close();
+
       audioCtx = null;
+
     }
+
     musicNodes = [];
+
   }
 
-  musicToggle.addEventListener('click', ()=>{
-    playing = !playing;
-    musicToggle.classList.toggle('playing', playing);
-    musicToggle.setAttribute('aria-pressed', String(playing));
-    if(playing){
-      startAmbientMusic();
-    } else {
-      stopAmbientMusic();
+
+  musicToggle.addEventListener(
+    'click',
+    () => {
+
+      playing = !playing;
+
+      musicToggle.classList.toggle(
+        'playing',
+        playing
+      );
+
+      musicToggle.setAttribute(
+        'aria-pressed',
+        String(playing)
+      );
+
+
+      if(playing){
+
+        startAmbientMusic();
+
+      }else{
+
+        stopAmbientMusic();
+
+      }
+
     }
-  });
+  );
+
 })();
+
 </script>
 
 </body>
 </html>
+```
