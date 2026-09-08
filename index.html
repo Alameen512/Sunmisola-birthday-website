@@ -838,7 +838,6 @@
   </svg>
 </button>
 
-
 <!-- HERO -->
 
 <section class="hero">
@@ -873,7 +872,6 @@
   </div>
 
 </section>
-
 
 <!-- COUNTDOWN -->
 
@@ -923,7 +921,6 @@
 
 </section>
 
-
 <!-- MESSAGE -->
 
 <section id="message-section">
@@ -947,7 +944,6 @@
   </div>
 
 </section>
-
 
 <!-- 21 WISHES -->
 
@@ -1100,7 +1096,6 @@
 
 </section>
 
-
 <!-- APPRECIATION -->
 
 <section>
@@ -1173,7 +1168,6 @@
 
 </section>
 
-
 <!-- NEW CHAPTER -->
 
 <section>
@@ -1224,7 +1218,6 @@
   </div>
 
 </section>
-
 
 <!-- GIFT -->
 
@@ -1298,7 +1291,6 @@
 
 </section>
 
-
 <!-- FINAL -->
 
 <section class="final-section">
@@ -1342,11 +1334,9 @@
 
 </section>
 
-
 <footer>
   made with 💗 just for you
 </footer>
-
 
 <script>
 
@@ -1456,13 +1446,18 @@
     document.getElementById('countdownNote');
 
 
-  function getNextBirthday(){
+  function updateCountdown(){
 
     const now = new Date();
 
-    let birthday =
+    const currentYear =
+      now.getFullYear();
+
+
+    // Sunmisola's birthday: September 9
+    const birthdayToday =
       new Date(
-        now.getFullYear(),
+        currentYear,
         8,
         9,
         0,
@@ -1470,11 +1465,43 @@
         0
       );
 
-    if(now >= birthday){
+
+    // Check if today is September 9
+    const isBirthday =
+      now.getMonth() === 8 &&
+      now.getDate() === 9;
+
+
+    /* ---------- BIRTHDAY ---------- */
+
+    if(isBirthday){
+
+      daysEl.textContent = '00';
+      hoursEl.textContent = '00';
+      minutesEl.textContent = '00';
+      secondsEl.textContent = '00';
+
+      countdownNote.textContent =
+        'Today, we celebrate you! 🎂💗✨';
+
+      return;
+
+    }
+
+
+    /* ---------- NEXT BIRTHDAY ---------- */
+
+    let birthday =
+      birthdayToday;
+
+
+    // If her birthday has already passed this year,
+    // count down to next year's birthday.
+    if(now > birthday){
 
       birthday =
         new Date(
-          now.getFullYear() + 1,
+          currentYear + 1,
           8,
           9,
           0,
@@ -1484,35 +1511,9 @@
 
     }
 
-    return birthday;
-
-  }
-
-
-  function updateCountdown(){
-
-    const now = new Date();
-
-    const birthday =
-      getNextBirthday();
 
     const difference =
       birthday - now;
-
-
-    if(difference <= 0){
-
-      daysEl.textContent = '00';
-      hoursEl.textContent = '00';
-      minutesEl.textContent = '00';
-      secondsEl.textContent = '00';
-
-      countdownNote.textContent =
-        'Happy Birthday, Sunmisola! 🎂💗✨';
-
-      return;
-
-    }
 
 
     const days =
@@ -1549,10 +1550,14 @@
       String(seconds).padStart(2,'0');
 
 
-    if(
+    /* ---------- COUNTDOWN MESSAGE ---------- */
+
+    const isDayBefore =
       now.getMonth() === 8 &&
-      now.getDate() === 8
-    ){
+      now.getDate() === 8;
+
+
+    if(isDayBefore){
 
       countdownNote.textContent =
         'tomorrow, we celebrate you 💗';
